@@ -1,0 +1,19 @@
+<table class="table" style="margin-left:auto;margin-right:auto;width: 80%;">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Birth Date</th>
+        <th>Action</th>
+      
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor= "let p of persons">
+        <td>{{p.id}}</td>
+        <td>{{p.name}}</td>
+        <td>{{p.birthdate}}</td>
+        <td><button type="button" class="btn btn-danger" (click)="delete(p.id)">Delete</button></td>
+      </tr>
+    </tbody>
+</table>

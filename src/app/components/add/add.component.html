@@ -1,0 +1,22 @@
+<h1 style="text-align: center;">Add Person</h1>
+
+<form #form="ngForm" class="row g-3" style="margin-left:auto;margin-right:auto;width: 60%;">
+    <div class="mb-3">
+        <label for="id" class="form-label">Id</label>
+        <input type="text" name="id" ngModel class="form-control" id="id">
+    </div>
+    <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" name="name" ngModel class="form-control" id="name">
+    </div>
+    <div class="mb-3">
+        <label for="birthdate" class="form-label">Birth Date</label>
+        <input type="date" name="birthdate" ngModel class="form-control" id="birthdate">
+    </div>
+    
+    <div class="d-grid gap-2 col-2 mx-auto ">
+        <button (click)="addPerson(form)" type="submit" class="btn btn-lg btn-outline-success">Insert</button>
+    </div>
+
+</form>
+    

@@ -1,0 +1,47 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="form-group d-flex justify-content-between">
+            <input type="email" class="form-control w-50" [(ngModel)]="person.id" name="id" id="id" placeholder="ID">
+            <button (click)="Search()" class="btn btn-success">Search</button>
+        </div>
+    </div>
+    <hr>
+
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Birth Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor='let p of persons'>
+            <th >{{ p.id }}</th>
+            <td>{{ p.name }}</td>
+            <td>{{ p.birthdate }}</td>
+          </tr>
+        </tbody>
+    </table>
+
+
+    <form *ngFor="let p of persons" #form="ngForm" class="row g-3" style="margin-left:auto;margin-right:auto;width: 60%;">
+          <div class="mb-3">
+              <label for="id" class="form-label">Id</label>
+              <input type="text" name="id" class="form-control" id="id" [value]='p.id' [(ngModel)]="p.id">
+          </div>
+          <div class="mb-3">
+              <label for="name" class="form-label">Name</label>
+              <input type="text" name="name" class="form-control" id="name" [value]='p.name' [(ngModel)]="p.name">
+          </div>
+          <div class="mb-3">
+              <label for="birthdate" class="form-label">Birth Date</label>
+              <input type="date" name="birthdate" class="form-control" id="birthdate" [value]='p.birthdate' [(ngModel)]="p.birthdate">
+          </div>
+          
+          <div class="d-grid gap-2 col-2 mx-auto ">
+              <button (click)="Edit(p)" type="submit" class="btn btn-lg btn-outline-success">Update</button>
+          </div>
+  </form>
+    
+</div>
